@@ -4,12 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Data
-@AllArgsConstructor
-public class ProductResponseDto {
+public class ChangeProductNameDto {
     private Long number;
     private String name;
-    private int price;
-    private int stock;
+
 }
