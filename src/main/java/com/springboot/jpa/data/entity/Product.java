@@ -1,6 +1,6 @@
 package com.springboot.jpa.data.entity;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -8,6 +8,10 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "product")
 @Data
+@Builder
+@AllArgsConstructor
+@ToString(exclude = "name")
+@NoArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
