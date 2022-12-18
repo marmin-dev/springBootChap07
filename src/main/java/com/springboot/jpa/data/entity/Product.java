@@ -24,7 +24,7 @@ public class Product {
     private Integer price;
 
     @Column(nullable = false)
-    private Integer Stock;
+    private Integer stock;
 
     private LocalDateTime createdAt;
 
