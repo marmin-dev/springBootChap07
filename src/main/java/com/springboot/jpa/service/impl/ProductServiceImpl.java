@@ -39,8 +39,7 @@ public class ProductServiceImpl implements ProductService {
         product.setName(dto.getName());
         product.setPrice(dto.getPrice());
         product.setStock(dto.getStock());
-        product.setCreatedAt(LocalDateTime.now());
-        product.setUpdateAt(LocalDateTime.now());
+
 
         Product savedProduct = productRepository.save(product);
         ProductResponseDto productResponseDto = new ProductResponseDto();

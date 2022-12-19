@@ -7,12 +7,14 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "product")
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
-@ToString(exclude = "name")
+@ToString(callSuper = true)
 @NoArgsConstructor
-public class Product {
+@EqualsAndHashCode(callSuper = true)
+public class Product extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long number;
@@ -26,8 +28,5 @@ public class Product {
     @Column(nullable = false)
     private Integer stock;
 
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updateAt;
 
 }
