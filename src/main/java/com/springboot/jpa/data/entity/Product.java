@@ -28,5 +28,12 @@ public class Product extends BaseEntity{
     @Column(nullable = false)
     private Integer stock;
 
+    @ToString.Exclude
+    @OneToOne(mappedBy = "product")
+    private ProductDetail productDetail;
 
+    @ManyToOne
+    @JoinColumn(name ="provider_id")
+    @ToString.Exclude
+    private Provider provider;
 }
