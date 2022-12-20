@@ -23,4 +23,5 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query("SELECT p.name, p.price, p.stock FROM Product p WHERE p.name = :name")
     List<Object[]> findByNameParam2(@Param("name") String name);
+
 }

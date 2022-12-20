@@ -1,6 +1,8 @@
 package com.springboot.jpa.data.entity;
 
+import com.springboot.jpa.repository.ProviderRepository;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,8 +23,9 @@ public class Provider extends BaseEntity{
 
     private String name;
 
-    @OneToMany(mappedBy = "provider", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "provider", orphanRemoval = true,cascade = CascadeType.PERSIST)
     @ToString.Exclude
     private List<Product> productList = new ArrayList<>();
+
 
 }

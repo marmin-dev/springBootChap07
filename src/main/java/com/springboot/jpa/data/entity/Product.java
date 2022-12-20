@@ -46,4 +46,6 @@ public class Product extends BaseEntity{
     public void addProducer(Producer producer){
         this.producers.add(producer);
     }
+
+
 }
